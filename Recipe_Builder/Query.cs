@@ -16,7 +16,7 @@ public class SpoonacularService : ISpoonacularService
         List<Recipe> recipes = new List<Recipe>();
 
         var url = $"https://api.spoonacular.com/recipes/complexSearch";
-        var parameters = $"?query={query}&apiKey={Consts.SPOONACULAR_API_KEY}&number=5";
+        var parameters = $"?query={query}&addRecipeInstructions=true&apiKey={Consts.SPOONACULAR_API_KEY}&number=5";
 
         HttpClient client = new HttpClient();
         client.BaseAddress = new Uri(url);
@@ -37,9 +37,34 @@ public class SpoonacularService : ISpoonacularService
 
         return recipes;
     }
-    public async Task<Recipe> GetRecipeDetails(Recipe choice)
+    public async Task<IEnumerable<Ingredient>> GetRecipeDetails(Recipe choice)
     {
-        var url = $"https://api.spoonacular.com/recipes/recipes/{choice.Id}/information";
+        List<Ingredient> Ingredients = new List<Ingredient>();
+
+        var url = $"https://api.spoonacular.com/recipes/{choice.Id}/information";
+        var parameters = $"?id={choice.Id}&apiKey={Consts.SPOONACULAR_API_KEY}";
+
+        HttpClient client = new HttpClient();
+        client.BaseAddress = new Uri(url);
+        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+        HttpResponseMessage response = await client.GetAsync(parameters).ConfigureAwait(false);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var jsonString = await response.Content.ReadAsStringAsync();
+            var ingredientList = JsonConvert.DeserializeObject<IngredientList>(jsonString);
+            if (ingredientList != null)
+            {
+                Ingredients.AddRange(ingredientList.Ingredient);
+            }
+        }
+
+        return Ingredients;
+    }
+    public async Task<Recipe> GetInstructions(Recipe choice)
+    {
+        var url = $"https://api.spoonacular.com/recipes/{choice.Id}/analyzedInstructions";
         var parameters = $"?id={choice.Id}&apiKey={Consts.SPOONACULAR_API_KEY}";
 
         HttpClient client = new HttpClient();

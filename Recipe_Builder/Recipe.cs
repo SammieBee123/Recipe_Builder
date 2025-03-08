@@ -17,13 +17,13 @@ namespace Recipe_Builder
 
         [JsonProperty("imageType")]
         public string ImageType { get; set; }
+        [JsonProperty("instructions[steps[number]]")]
+        public int Number { get; set; }
 
-        [JsonProperty("Servings")]
-        public int Servings { get; set; }
-        [JsonProperty("ReadyInMinutes")]
-        public int SReadyInMinutes { get; set; }
-        [JsonProperty("Servings")]
-        public int Servings { get; set; }
+        [JsonProperty("instructions[steps[step]]")]
+        public string step { get; set; }
+
+        
 
     }
 }

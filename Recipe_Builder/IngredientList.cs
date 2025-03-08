@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Recipe_Builder
 {
     [Serializable]
-    public class IngridientList
+    public class IngredientList
     {
         [JsonProperty("results")]
         public IEnumerable<Ingredient> Ingredient { get; set; }
