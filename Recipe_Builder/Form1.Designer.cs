@@ -28,43 +28,96 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            button1 = new Button();
+            keywordTextBox = new TextBox();
+            getButton = new Button();
+            exitButton = new Button();
+            label1 = new Label();
+            recipesListBox = new ListBox();
+            label2 = new Label();
             SuspendLayout();
             // 
-            // textBox1
+            // keywordTextBox
             // 
-            textBox1.Location = new Point(66, 53);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(620, 55);
-            textBox1.TabIndex = 0;
+            keywordTextBox.Location = new Point(228, 31);
+            keywordTextBox.Margin = new Padding(2);
+            keywordTextBox.Name = "keywordTextBox";
+            keywordTextBox.Size = new Size(312, 31);
+            keywordTextBox.TabIndex = 0;
             // 
-            // button1
+            // getButton
             // 
-            button1.Location = new Point(214, 244);
-            button1.Name = "button1";
-            button1.Size = new Size(367, 98);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            getButton.Location = new Point(143, 320);
+            getButton.Margin = new Padding(2);
+            getButton.Name = "getButton";
+            getButton.Size = new Size(152, 51);
+            getButton.TabIndex = 1;
+            getButton.Text = "Get Recipes";
+            getButton.UseVisualStyleBackColor = true;
+            getButton.Click += button1_Click;
+            // 
+            // exitButton
+            // 
+            exitButton.Location = new Point(388, 320);
+            exitButton.Margin = new Padding(2);
+            exitButton.Name = "exitButton";
+            exitButton.Size = new Size(152, 51);
+            exitButton.TabIndex = 2;
+            exitButton.Text = "Exit";
+            exitButton.UseVisualStyleBackColor = true;
+            exitButton.Click += exitButton_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(62, 34);
+            label1.Name = "label1";
+            label1.Size = new Size(137, 25);
+            label1.TabIndex = 3;
+            label1.Text = "Enter keywords:";
+            // 
+            // recipesListBox
+            // 
+            recipesListBox.FormattingEnabled = true;
+            recipesListBox.ItemHeight = 25;
+            recipesListBox.Location = new Point(62, 84);
+            recipesListBox.Name = "recipesListBox";
+            recipesListBox.Size = new Size(528, 204);
+            recipesListBox.TabIndex = 4;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(57, 35);
+            label2.Name = "label2";
+            label2.Size = new Size(59, 25);
+            label2.TabIndex = 5;
+            label2.Text = "label2";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(20F, 48F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
+            ClientSize = new Size(652, 398);
+            Controls.Add(label2);
+            Controls.Add(recipesListBox);
+            Controls.Add(label1);
+            Controls.Add(exitButton);
+            Controls.Add(getButton);
+            Controls.Add(keywordTextBox);
+            Margin = new Padding(2);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Recipe Builder";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
-        private Button button1;
+        private TextBox keywordTextBox;
+        private Button getButton;
+        private Button exitButton;
+        private Label label1;
+        private ListBox recipesListBox;
+        private Label label2;
     }
 }
