@@ -1,3 +1,7 @@
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.ComponentModel;
+
 namespace Recipe_Builder
 {
     internal static class Program
@@ -11,7 +15,8 @@ namespace Recipe_Builder
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            SpoonacularService query = new SpoonacularService();
+            Application.Run(new Form1(query));
         }
     }
 }
