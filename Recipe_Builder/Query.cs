@@ -7,6 +7,7 @@ using System.Net.Http.Headers;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 public class SpoonacularService : ISpoonacularService
 {
@@ -35,5 +36,25 @@ public class SpoonacularService : ISpoonacularService
         }
 
         return recipes;
+    }
+    public async Task<Recipe> GetRecipeDetails(Recipe choice)
+    {
+        var url = $"https://api.spoonacular.com/recipes/recipes/{choice.Id}/information";
+        var parameters = $"?id={choice.Id}&apiKey={Consts.SPOONACULAR_API_KEY}";
+
+        HttpClient client = new HttpClient();
+        client.BaseAddress = new Uri(url);
+        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+        HttpResponseMessage response = await client.GetAsync(parameters).ConfigureAwait(false);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var jsonString = await response.Content.ReadAsStringAsync();
+            var recipe = JsonConvert.DeserializeObject<Recipe>(jsonString);
+            return recipe;
+        }
+
+        return choice;
     }
 }

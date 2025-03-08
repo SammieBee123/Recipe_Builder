@@ -2,9 +2,9 @@
 using System;
 
 namespace Recipe_Builder
-{ 
+{
     [Serializable]
-    public class Recipe
+    public class Ingredient
     {
         [JsonProperty("id")]
         public int Id { get; set; }
@@ -17,13 +17,5 @@ namespace Recipe_Builder
 
         [JsonProperty("imageType")]
         public string ImageType { get; set; }
-
-        [JsonProperty("Servings")]
-        public int Servings { get; set; }
-        [JsonProperty("ReadyInMinutes")]
-        public int SReadyInMinutes { get; set; }
-        [JsonProperty("Servings")]
-        public int Servings { get; set; }
-
     }
 }
