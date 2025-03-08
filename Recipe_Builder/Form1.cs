@@ -4,6 +4,7 @@ namespace Recipe_Builder
 {
     public partial class Form1 : Form
     {
+        List<Recipe> returnedRecipes = new List<Recipe>();
         private SpoonacularService setQuery;
         public Form1(SpoonacularService query)
         {
@@ -14,7 +15,7 @@ namespace Recipe_Builder
         private async void button1_Click(object sender, EventArgs e)
         {
             recipesListBox.Items.Clear();
-            List<Recipe> returnedRecipes = new List<Recipe>();
+
             // SpoonacularService list = new SpoonacularService();
             // string recipes = list.Get5Recipies(keywordTextBox.Text);
 
@@ -25,15 +26,121 @@ namespace Recipe_Builder
                 IEnumerable<Recipe> recipes = await setQuery.Get5Recipies(keyword);
                 returnedRecipes = recipes.ToList();
                 foreach (var recipe in returnedRecipes)
-                    {
+                {
                     recipesListBox.Items.Add(recipe.Title);
+                    //pictureBox1.Visible(recipe.Image);
                 }
             }
+            else
+            {
+                MessageBox.Show("Invalid Keyword");
+            }
+            //pictureBox1.Visible = false;
+
+            /*if (recipesListBox.SelectedIndex >= 0)
+            {
+                int index = recipesListBox.SelectedIndex;
+
+                if (index < returnedRecipes.Count)
+                {
+                    string imageUrl = returnedRecipes[index].Image;
+
+                    try
+                    {
+                        pictureBox1.Visible = true;
+                        pictureBox1.Load(imageUrl);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }*/
+
+            /* switch (recipesListBox.SelectedIndex)
+             {
+                 case 0:
+                     pictureBox1.Visible = true;
+                     pictureBox1.Load(returnedRecipes[recipesListBox.SelectedIndex].Image);
+                     break;
+
+                 case 1:
+                     pictureBox1.Visible = true;
+                     pictureBox1.Load();
+                     break;
+
+                 case 2:
+                     pictureBox1.Visible = true;
+                     pictureBox1.Load();
+                     break;
+
+                 case 3:
+                     pictureBox1.Visible = true;
+                     pictureBox1.Load();
+                     break;
+
+                 case 4:
+                     pictureBox1.Visible = true;
+                     pictureBox1.Load();
+                     break;
+
+             }*/
+
+            //if(pic == -1)
+            //{
+            //    int i = recipesListBox.SelectedIndex;
+            //    // if (recipesListBox.SelectedIndex == i)
+            //    if (i >= 0 && i < returnedRecipes.Count)
+            //    {
+            //        pictureBox1.Visible = true;
+            //        pictureBox1.Load(returnedRecipes[i].Image);
+            //    }
+            //}
+
+
+
+            //}
+            /*  //foreach (var recipe in returnedRecipes)
+              {
+                  //if (recipesListBox.SelectedIndex == i)
+                  //{
+                      pictureBox1.Visible = true;
+                      pictureBox1.Load(recipe.Image);
+                  //}
+                  //pictureBox1.Visible(recipe.Image);
+              }*/
+            //for (int i = 0; i < returnedRecipes.Count; i++)
+            //{
+
+
+            //while (recipesListBox.SelectedIndex != -1)
+            //{ 
+            //int index = recipesListBox.SelectedIndex;
+            //  pictureBox1.Visible = true;
+            //  pictureBox1.Load(returnedRecipes[index].Image);
+
+            //}
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void image_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void recipesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i = recipesListBox.SelectedIndex;
+            // if (recipesListBox.SelectedIndex == i)
+            if (i >= 0 && i < returnedRecipes.Count)
+            {
+                pictureBox1.Visible = true;
+                pictureBox1.Load(returnedRecipes[i].Image);
+            }
         }
     }
 }

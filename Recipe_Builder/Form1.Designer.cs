@@ -33,7 +33,10 @@
             exitButton = new Button();
             label1 = new Label();
             recipesListBox = new ListBox();
-            label2 = new Label();
+            displayLabel = new Label();
+            pictureBox1 = new PictureBox();
+            image = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // keywordTextBox
@@ -83,22 +86,43 @@
             recipesListBox.Name = "recipesListBox";
             recipesListBox.Size = new Size(528, 204);
             recipesListBox.TabIndex = 4;
+            recipesListBox.SelectedIndexChanged += recipesListBox_SelectedIndexChanged;
             // 
-            // label2
+            // displayLabel
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(57, 35);
-            label2.Name = "label2";
-            label2.Size = new Size(59, 25);
-            label2.TabIndex = 5;
-            label2.Text = "label2";
+            displayLabel.BorderStyle = BorderStyle.FixedSingle;
+            displayLabel.Location = new Point(699, 311);
+            displayLabel.Name = "displayLabel";
+            displayLabel.Size = new Size(258, 69);
+            displayLabel.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(699, 54);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(258, 234);
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            pictureBox1.Visible = false;
+            // 
+            // image
+            // 
+            image.Location = new Point(646, 307);
+            image.Name = "image";
+            image.Size = new Size(112, 34);
+            image.TabIndex = 7;
+            image.Text = "Show Image";
+            image.UseVisualStyleBackColor = true;
+            image.Click += image_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(652, 398);
-            Controls.Add(label2);
+            ClientSize = new Size(1070, 398);
+            Controls.Add(image);
+            Controls.Add(pictureBox1);
+            Controls.Add(displayLabel);
             Controls.Add(recipesListBox);
             Controls.Add(label1);
             Controls.Add(exitButton);
@@ -107,6 +131,7 @@
             Margin = new Padding(2);
             Name = "Form1";
             Text = "Recipe Builder";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -118,6 +143,8 @@
         private Button exitButton;
         private Label label1;
         private ListBox recipesListBox;
-        private Label label2;
+        private Label displayLabel;
+        private PictureBox pictureBox1;
+        private Button image;
     }
 }
