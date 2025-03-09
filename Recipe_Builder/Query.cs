@@ -37,9 +37,9 @@ public class SpoonacularService : ISpoonacularService
 
         return recipes;
     }
-    public async Task<IEnumerable<Ingredient>> GetRecipeDetails(Recipe choice)
+    public async Task<IEnumerable<ExtendedIngredients>> GetRecipeDetails(Recipe choice)
     {
-        List<Ingredient> Ingredients = new List<Ingredient>();
+        List<ExtendedIngredients> Ingredients = new List<ExtendedIngredients>();
 
         var url = $"https://api.spoonacular.com/recipes/{choice.Id}/information";
         var parameters = $"?id={choice.Id}&apiKey={Consts.SPOONACULAR_API_KEY}";
@@ -53,10 +53,10 @@ public class SpoonacularService : ISpoonacularService
         if (response.IsSuccessStatusCode)
         {
             var jsonString = await response.Content.ReadAsStringAsync();
-            var ingredientList = JsonConvert.DeserializeObject<IngredientList>(jsonString);
-            if (ingredientList != null)
+            var IngredientsList = JsonConvert.DeserializeObject<IngredientList>(jsonString);
+            if (IngredientsList != null)
             {
-                Ingredients.AddRange(ingredientList.Ingredient);
+                Ingredients.AddRange(IngredientsList.ExtendedIngredients);
             }
         }
 

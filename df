@@ -1,0 +1,24 @@
+[1mdiff --git a/Recipe_Builder/Form1.cs b/Recipe_Builder/Form1.cs[m
+[1mindex eebaa3d..af8fb25 100644[m
+[1m--- a/Recipe_Builder/Form1.cs[m
+[1m+++ b/Recipe_Builder/Form1.cs[m
+[36m@@ -177,13 +177,18 @@[m [mnamespace Recipe_Builder[m
+             }[m
+         }[m
+ [m
+[31m-        private void getRecipe_Click(object sender, EventArgs e)[m
+[32m+[m[32m        private async void getRecipe_Click(object sender, EventArgs e)[m
+         {[m
+             Search.SelectedTab = tabPage2;[m
+ [m
+             label4.Text = returnedRecipes[selectedIndex].Title;[m
+             richTextBox1.Text = "";[m
+             //MessageBox.Show(returnedRecipes[selectedIndex ].AnalyzedInstructions);[m
+[32m+[m[32m            IEnumerable<ExtendedIngredients> ExtendedIngredients = await setQuery.GetRecipeDetails(returnedRecipes[selectedIndex]);[m
+[32m+[m[32m            foreach (var Original in ExtendedIngredients.Select(x => x.Original))[m
+[32m+[m[32m            {[m
+[32m+[m[32m                MessageBox.Show(Original.ToString());[m
+[32m+[m[32m            }[m
+             foreach (var Steps in returnedRecipes[selectedIndex].AnalyzedInstructions.Select(x => x.Steps))[m
+             {[m
+                 foreach (var Step in Steps.Select(x => x.Step))[m

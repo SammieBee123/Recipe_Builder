@@ -177,13 +177,18 @@ namespace Recipe_Builder
             }
         }
 
-        private void getRecipe_Click(object sender, EventArgs e)
+        private async void getRecipe_Click(object sender, EventArgs e)
         {
             Search.SelectedTab = tabPage2;
 
             label4.Text = returnedRecipes[selectedIndex].Title;
             richTextBox1.Text = "";
             //MessageBox.Show(returnedRecipes[selectedIndex ].AnalyzedInstructions);
+            IEnumerable<ExtendedIngredients> ExtendedIngredients = await setQuery.GetRecipeDetails(returnedRecipes[selectedIndex]);
+            foreach (var Original in ExtendedIngredients.Select(x => x.Original))
+            {
+                MessageBox.Show(Original.ToString());
+            }
             foreach (var Steps in returnedRecipes[selectedIndex].AnalyzedInstructions.Select(x => x.Steps))
             {
                 foreach (var Step in Steps.Select(x => x.Step))
