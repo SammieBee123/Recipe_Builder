@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace Recipe_Builder
 {
     [Serializable]
-    public class InstructionList
+    public class analyzedInstructions
     {
-        [JsonProperty("analyzedInstructions")]
-        public IEnumerable<Instruction> Instructions { get; set; }
+        [JsonProperty("steps")]
+        public List<Steps> Steps { get; set; }
     }
 }

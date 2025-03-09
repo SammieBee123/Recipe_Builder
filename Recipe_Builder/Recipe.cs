@@ -18,9 +18,9 @@ namespace Recipe_Builder
         [JsonProperty("imageType")]
         public string ImageType { get; set; }
 
-        [JsonProperty("analyzedInstructions[steps]")]
-        public InstructionList Step { get; set; }
-
+        [JsonProperty("analyzedInstructions")]
+        public List<analyzedInstructions> AnalyzedInstructions { get; set; }
+        //rename to analyzed instructions
         
 
     }

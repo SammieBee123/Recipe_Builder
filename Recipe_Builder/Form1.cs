@@ -179,10 +179,15 @@ namespace Recipe_Builder
 
         private void getRecipe_Click(object sender, EventArgs e)
         {
-          /*  foreach (var step in returnedRecipes[selectedIndex].Step.Instructions)
+            //MessageBox.Show(returnedRecipes[selectedIndex ].AnalyzedInstructions);
+            foreach (var Steps in returnedRecipes[selectedIndex].AnalyzedInstructions.Select(x => x.Steps))
             {
-                MessageBox.Show(step.ToString());
-            }*/
+                foreach (var Step in Steps.Select(x => x.Step))
+                {
+                    MessageBox.Show(Step.ToString());
+                }
+                
+            }
         }
     }
 }
