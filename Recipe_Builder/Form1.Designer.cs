@@ -35,8 +35,14 @@
             recipesListBox = new ListBox();
             displayLabel = new Label();
             pictureBox1 = new PictureBox();
-            image = new Button();
+            groupBox1 = new GroupBox();
+            checkBox1 = new CheckBox();
+            checkBox2 = new CheckBox();
+            checkBox3 = new CheckBox();
+            checkBox4 = new CheckBox();
+            checkBox5 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // keywordTextBox
@@ -105,22 +111,76 @@
             pictureBox1.TabStop = false;
             pictureBox1.Visible = false;
             // 
-            // image
+            // groupBox1
             // 
-            image.Location = new Point(646, 307);
-            image.Name = "image";
-            image.Size = new Size(112, 34);
-            image.TabIndex = 7;
-            image.Text = "Show Image";
-            image.UseVisualStyleBackColor = true;
-            image.Click += image_Click;
+            groupBox1.Controls.Add(checkBox5);
+            groupBox1.Controls.Add(checkBox4);
+            groupBox1.Controls.Add(checkBox3);
+            groupBox1.Controls.Add(checkBox2);
+            groupBox1.Controls.Add(checkBox1);
+            groupBox1.Location = new Point(997, 34);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(300, 229);
+            groupBox1.TabIndex = 7;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Diet Restriction";
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(6, 39);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(87, 29);
+            checkBox1.TabIndex = 0;
+            checkBox1.Text = "Vegan";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(6, 74);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(121, 29);
+            checkBox2.TabIndex = 1;
+            checkBox2.Text = "Vegetarian";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            checkBox3.AutoSize = true;
+            checkBox3.Location = new Point(6, 109);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(127, 29);
+            checkBox3.TabIndex = 2;
+            checkBox3.Text = "Gluten Free";
+            checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            checkBox4.AutoSize = true;
+            checkBox4.Location = new Point(6, 144);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(125, 29);
+            checkBox4.TabIndex = 3;
+            checkBox4.Text = "Pescetarian";
+            checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            checkBox5.AutoSize = true;
+            checkBox5.Location = new Point(6, 179);
+            checkBox5.Name = "checkBox5";
+            checkBox5.Size = new Size(116, 29);
+            checkBox5.TabIndex = 4;
+            checkBox5.Text = "Ketogenic";
+            checkBox5.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1070, 398);
-            Controls.Add(image);
+            ClientSize = new Size(1326, 398);
+            Controls.Add(groupBox1);
             Controls.Add(pictureBox1);
             Controls.Add(displayLabel);
             Controls.Add(recipesListBox);
@@ -132,6 +192,8 @@
             Name = "Form1";
             Text = "Recipe Builder";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -145,6 +207,11 @@
         private ListBox recipesListBox;
         private Label displayLabel;
         private PictureBox pictureBox1;
-        private Button image;
+        private GroupBox groupBox1;
+        private CheckBox checkBox5;
+        private CheckBox checkBox4;
+        private CheckBox checkBox3;
+        private CheckBox checkBox2;
+        private CheckBox checkBox1;
     }
 }

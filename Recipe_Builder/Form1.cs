@@ -16,7 +16,36 @@ namespace Recipe_Builder
         private async void button1_Click(object sender, EventArgs e)
         {
             recipesListBox.Items.Clear();
+            List<string> dietList = new List<string>();
 
+            if (checkBox1.Checked)
+            { dietList.Add("vegan"); }
+
+            if (checkBox2.Checked)
+            { dietList.Add("vegetarian"); }
+
+            if (checkBox3.Checked)
+            { dietList.Add("glutenfree"); }
+
+            if (checkBox4.Checked)
+            { dietList.Add("pescetarian"); }
+
+            if (checkBox5.Checked)
+            { dietList.Add("ketogenic"); }
+
+            string restriction = "";
+
+            int n = dietList.Count();
+
+            foreach (string diet in dietList)
+            {
+                restriction += diet;
+                if (diet != dietList[n - 1])
+                { restriction += ","; }
+
+            }
+
+            MessageBox.Show(restriction);
             // SpoonacularService list = new SpoonacularService();
             // string recipes = list.Get5Recipies(keywordTextBox.Text);
 
@@ -128,10 +157,6 @@ namespace Recipe_Builder
             this.Close();
         }
 
-        private void image_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void recipesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
