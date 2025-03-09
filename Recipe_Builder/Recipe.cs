@@ -17,8 +17,6 @@ namespace Recipe_Builder
 
         [JsonProperty("imageType")]
         public string ImageType { get; set; }
-        [JsonProperty("instructions[steps]")]
-        public int Number { get; set; }
 
         [JsonProperty("instructions[steps]")]
         public InstructionList step { get; set; }
