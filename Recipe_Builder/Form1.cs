@@ -165,36 +165,49 @@ namespace Recipe_Builder
             // if (recipesListBox.SelectedIndex == i)
             if (selectedIndex >= 0 && selectedIndex < returnedRecipes.Count)
             {
-                pictureBox1.Visible = true;
+               // pictureBox1.Visible = true;
                 try
                 {
                     pictureBox1.Load(returnedRecipes[selectedIndex].Image);
                 }
                 catch
                 {
-                    pictureBox1.Visible = false;
+                    pictureBox1.Visible = true;
                 }
             }
         }
 
         private void getRecipe_Click(object sender, EventArgs e)
         {
-            // tabPage2
+            Search.SelectedTab = tabPage2;
+
             label4.Text = returnedRecipes[selectedIndex].Title;
-            label3.Text = "";
+            richTextBox1.Text = "";
             //MessageBox.Show(returnedRecipes[selectedIndex ].AnalyzedInstructions);
             foreach (var Steps in returnedRecipes[selectedIndex].AnalyzedInstructions.Select(x => x.Steps))
             {
                 foreach (var Step in Steps.Select(x => x.Step))
                 {
-                    label3.Text+=Step.ToString();
-                    label3.Text += " ";
+                    richTextBox1.Text += Step.ToString();
+                    richTextBox1.Text += "\n";
                 }
 
             }
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Enter a cuisine type, ingredient, dish, etc., into the search bar and click \"Results\". Then" +
+                " select one of the recipe options and click \"Get Recipe\".");
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
         {
 
         }

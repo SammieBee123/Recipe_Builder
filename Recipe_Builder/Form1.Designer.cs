@@ -28,13 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tabPage2 = new TabPage();
-            label6 = new Label();
-            label5 = new Label();
-            ingredientsLabel = new Label();
-            label4 = new Label();
-            label3 = new Label();
             tabPage1 = new TabPage();
+            pictureBox2 = new PictureBox();
             label2 = new Label();
             recipesListBox = new ListBox();
             getRecipe = new Button();
@@ -50,75 +45,23 @@
             exitButton = new Button();
             label1 = new Label();
             Search = new TabControl();
-            tabPage2.SuspendLayout();
+            tabPage2 = new TabPage();
+            richTextBox2 = new RichTextBox();
+            richTextBox1 = new RichTextBox();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
             tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             Search.SuspendLayout();
+            tabPage2.SuspendLayout();
             SuspendLayout();
-            // 
-            // tabPage2
-            // 
-            tabPage2.Controls.Add(label6);
-            tabPage2.Controls.Add(label5);
-            tabPage2.Controls.Add(ingredientsLabel);
-            tabPage2.Controls.Add(label4);
-            tabPage2.Controls.Add(label3);
-            tabPage2.Location = new Point(4, 34);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1319, 610);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Recipe";
-            tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(376, 115);
-            label6.Name = "label6";
-            label6.Size = new Size(108, 25);
-            label6.TabIndex = 4;
-            label6.Text = "Instructions:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
-            label5.Location = new Point(61, 115);
-            label5.Name = "label5";
-            label5.Size = new Size(105, 25);
-            label5.TabIndex = 3;
-            label5.Text = "Ingredients:";
-            // 
-            // ingredientsLabel
-            // 
-            ingredientsLabel.AutoSize = true;
-            ingredientsLabel.BorderStyle = BorderStyle.FixedSingle;
-            ingredientsLabel.Location = new Point(61, 151);
-            ingredientsLabel.Name = "ingredientsLabel";
-            ingredientsLabel.Size = new Size(2, 27);
-            ingredientsLabel.TabIndex = 2;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            label4.Location = new Point(279, 27);
-            label4.Name = "label4";
-            label4.Size = new Size(0, 54);
-            label4.TabIndex = 1;
-            // 
-            // label3
-            // 
-            label3.BorderStyle = BorderStyle.FixedSingle;
-            label3.Location = new Point(366, 151);
-            label3.Name = "label3";
-            label3.Size = new Size(896, 356);
-            label3.TabIndex = 0;
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(pictureBox2);
             tabPage1.Controls.Add(label2);
             tabPage1.Controls.Add(recipesListBox);
             tabPage1.Controls.Add(getRecipe);
@@ -131,17 +74,28 @@
             tabPage1.Location = new Point(4, 34);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1319, 610);
+            tabPage1.Size = new Size(1291, 532);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Search";
             tabPage1.UseVisualStyleBackColor = true;
             tabPage1.Click += tabPage1_Click;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.vecteezy_question_mark_icon_51454748;
+            pictureBox2.Location = new Point(1209, 0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(56, 52);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 10;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            label2.Location = new Point(341, 21);
+            label2.Location = new Point(341, 22);
             label2.Name = "label2";
             label2.Size = new Size(526, 54);
             label2.TabIndex = 9;
@@ -150,6 +104,7 @@
             // recipesListBox
             // 
             recipesListBox.FormattingEnabled = true;
+            recipesListBox.HorizontalScrollbar = true;
             recipesListBox.ItemHeight = 25;
             recipesListBox.Location = new Point(350, 198);
             recipesListBox.Name = "recipesListBox";
@@ -169,10 +124,10 @@
             // 
             // keywordTextBox
             // 
-            keywordTextBox.Location = new Point(450, 146);
-            keywordTextBox.Margin = new Padding(2);
+            keywordTextBox.Location = new Point(450, 147);
+            keywordTextBox.Margin = new Padding(1, 2, 1, 2);
             keywordTextBox.Name = "keywordTextBox";
-            keywordTextBox.Size = new Size(312, 31);
+            keywordTextBox.Size = new Size(313, 31);
             keywordTextBox.TabIndex = 0;
             // 
             // groupBox1
@@ -182,7 +137,7 @@
             groupBox1.Controls.Add(checkBox3);
             groupBox1.Controls.Add(checkBox2);
             groupBox1.Controls.Add(checkBox1);
-            groupBox1.Location = new Point(82, 148);
+            groupBox1.Location = new Point(81, 148);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(187, 217);
             groupBox1.TabIndex = 7;
@@ -192,7 +147,7 @@
             // checkBox5
             // 
             checkBox5.AutoSize = true;
-            checkBox5.Location = new Point(6, 179);
+            checkBox5.Location = new Point(6, 178);
             checkBox5.Name = "checkBox5";
             checkBox5.Size = new Size(116, 29);
             checkBox5.TabIndex = 4;
@@ -202,7 +157,7 @@
             // checkBox4
             // 
             checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(6, 144);
+            checkBox4.Location = new Point(6, 143);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(125, 29);
             checkBox4.TabIndex = 3;
@@ -212,7 +167,7 @@
             // checkBox3
             // 
             checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(6, 109);
+            checkBox3.Location = new Point(6, 108);
             checkBox3.Name = "checkBox3";
             checkBox3.Size = new Size(127, 29);
             checkBox3.TabIndex = 2;
@@ -222,7 +177,7 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(6, 74);
+            checkBox2.Location = new Point(6, 73);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(121, 29);
             checkBox2.TabIndex = 1;
@@ -232,7 +187,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(6, 39);
+            checkBox1.Location = new Point(6, 38);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(87, 29);
             checkBox1.TabIndex = 0;
@@ -241,10 +196,10 @@
             // 
             // getButton
             // 
-            getButton.Location = new Point(772, 143);
-            getButton.Margin = new Padding(2);
+            getButton.Location = new Point(771, 143);
+            getButton.Margin = new Padding(1, 2, 1, 2);
             getButton.Name = "getButton";
-            getButton.Size = new Size(111, 34);
+            getButton.Size = new Size(111, 33);
             getButton.TabIndex = 1;
             getButton.Text = "Results";
             getButton.UseVisualStyleBackColor = true;
@@ -252,19 +207,20 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = Properties.Resources.Logo;
             pictureBox1.Location = new Point(957, 168);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(258, 234);
+            pictureBox1.Size = new Size(259, 233);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
-            pictureBox1.Visible = false;
             // 
             // exitButton
             // 
             exitButton.Location = new Point(636, 435);
-            exitButton.Margin = new Padding(2);
+            exitButton.Margin = new Padding(1, 2, 1, 2);
             exitButton.Name = "exitButton";
-            exitButton.Size = new Size(155, 53);
+            exitButton.Size = new Size(154, 53);
             exitButton.TabIndex = 2;
             exitButton.Text = "Exit";
             exitButton.UseVisualStyleBackColor = true;
@@ -286,8 +242,73 @@
             Search.Location = new Point(0, 2);
             Search.Name = "Search";
             Search.SelectedIndex = 0;
-            Search.Size = new Size(1327, 648);
+            Search.Size = new Size(1299, 570);
             Search.TabIndex = 9;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Controls.Add(richTextBox2);
+            tabPage2.Controls.Add(richTextBox1);
+            tabPage2.Controls.Add(label6);
+            tabPage2.Controls.Add(label5);
+            tabPage2.Controls.Add(label4);
+            tabPage2.Location = new Point(4, 34);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(1291, 532);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Recipe";
+            tabPage2.UseVisualStyleBackColor = true;
+            tabPage2.Click += tabPage2_Click;
+            // 
+            // richTextBox2
+            // 
+            richTextBox2.Location = new Point(45, 152);
+            richTextBox2.Name = "richTextBox2";
+            richTextBox2.ScrollBars = RichTextBoxScrollBars.Vertical;
+            richTextBox2.Size = new Size(286, 355);
+            richTextBox2.TabIndex = 6;
+            richTextBox2.Text = "";
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.BackColor = SystemColors.ControlLightLight;
+            richTextBox1.Location = new Point(376, 152);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.ReadOnly = true;
+            richTextBox1.ScrollBars = RichTextBoxScrollBars.Vertical;
+            richTextBox1.Size = new Size(886, 355);
+            richTextBox1.TabIndex = 5;
+            richTextBox1.Text = "";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
+            label6.Location = new Point(376, 115);
+            label6.Name = "label6";
+            label6.Size = new Size(108, 25);
+            label6.TabIndex = 4;
+            label6.Text = "Instructions:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
+            label5.Location = new Point(45, 115);
+            label5.Name = "label5";
+            label5.Size = new Size(105, 25);
+            label5.TabIndex = 3;
+            label5.Text = "Ingredients:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            label4.Location = new Point(279, 27);
+            label4.Name = "label4";
+            label4.Size = new Size(0, 54);
+            label4.TabIndex = 1;
             // 
             // Form1
             // 
@@ -295,24 +316,22 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1299, 570);
             Controls.Add(Search);
-            Margin = new Padding(2);
+            Margin = new Padding(1, 2, 1, 2);
             Name = "Form1";
             Text = "Recipe Builder";
-            tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             Search.ResumeLayout(false);
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private TabPage tabPage2;
-        private Label label3;
         private TabPage tabPage1;
         private Label label2;
         private ListBox recipesListBox;
@@ -329,9 +348,12 @@
         private Button exitButton;
         private Label label1;
         private TabControl Search;
-        private Label label4;
+        private PictureBox pictureBox2;
+        private TabPage tabPage2;
+        private RichTextBox richTextBox1;
         private Label label6;
         private Label label5;
-        private Label ingredientsLabel;
+        private Label label4;
+        private RichTextBox richTextBox2;
     }
 }
