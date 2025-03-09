@@ -45,7 +45,7 @@ namespace Recipe_Builder
 
             }
 
-            MessageBox.Show(restriction);
+            //MessageBox.Show(restriction);
             // SpoonacularService list = new SpoonacularService();
             // string recipes = list.Get5Recipies(keywordTextBox.Text);
 
@@ -65,7 +65,7 @@ namespace Recipe_Builder
             {
                 MessageBox.Show("Invalid Keyword");
             }
-            MessageBox.Show(returnedRecipes.Count.ToString());
+            //MessageBox.Show(returnedRecipes.Count.ToString());
             //pictureBox1.Visible = false;
 
             /*if (recipesListBox.SelectedIndex >= 0)
@@ -179,24 +179,35 @@ namespace Recipe_Builder
 
         private async void getRecipe_Click(object sender, EventArgs e)
         {
-            Search.SelectedTab = tabPage2;
+            try
+            {
+                Search.SelectedTab = tabPage2;
 
-            label4.Text = returnedRecipes[selectedIndex].Title;
-            richTextBox1.Text = "";
-            //MessageBox.Show(returnedRecipes[selectedIndex ].AnalyzedInstructions);
-            IEnumerable<ExtendedIngredients> ExtendedIngredients = await setQuery.GetRecipeDetails(returnedRecipes[selectedIndex]);
-            foreach (var Original in ExtendedIngredients.Select(x => x.Original))
-            {
-                MessageBox.Show(Original.ToString());
-            }
-            foreach (var Steps in returnedRecipes[selectedIndex].AnalyzedInstructions.Select(x => x.Steps))
-            {
-                foreach (var Step in Steps.Select(x => x.Step))
+                label4.Text = returnedRecipes[selectedIndex].Title;
+                richTextBox1.Text = "";
+                //MessageBox.Show(returnedRecipes[selectedIndex ].AnalyzedInstructions);
+                IEnumerable<ExtendedIngredients> ExtendedIngredients = await setQuery.GetRecipeDetails(returnedRecipes[selectedIndex]);
+                foreach (var Original in ExtendedIngredients.Select(x => x.Original))
                 {
-                    richTextBox1.Text += Step.ToString();
-                    richTextBox1.Text += "\n";
+                    richTextBox2.Text += Original.ToString();
+                    richTextBox2.Text += "\n";
+                    //MessageBox.Show(Original.ToString());
                 }
+                foreach (var Steps in returnedRecipes[selectedIndex].AnalyzedInstructions.Select(x => x.Steps))
+                {
+                    foreach (var Step in Steps.Select(x => x.Step))
+                    {
+                        //MessageBox.Show(Step.ToString());
+                        richTextBox1.Text += Step.ToString();
+                        richTextBox1.Text += "\n";
+                    }
 
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Please search for recipes before getting the recipe.");
+                Search.SelectedTab = tabPage1;
             }
         }
 
