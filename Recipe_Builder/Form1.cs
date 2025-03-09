@@ -4,6 +4,7 @@ namespace Recipe_Builder
 {
     public partial class Form1 : Form
     {
+        int selectedIndex = 0;
         List<Recipe> returnedRecipes = new List<Recipe>();
         private SpoonacularService setQuery;
         public Form1(SpoonacularService query)
@@ -134,12 +135,12 @@ namespace Recipe_Builder
 
         private void recipesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int i = recipesListBox.SelectedIndex;
+            selectedIndex = recipesListBox.SelectedIndex;
             // if (recipesListBox.SelectedIndex == i)
-            if (i >= 0 && i < returnedRecipes.Count)
+            if (selectedIndex >= 0 && selectedIndex < returnedRecipes.Count)
             {
                 pictureBox1.Visible = true;
-                pictureBox1.Load(returnedRecipes[i].Image);
+                pictureBox1.Load(returnedRecipes[selectedIndex].Image);
             }
         }
     }
