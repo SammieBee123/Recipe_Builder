@@ -36,11 +36,12 @@
             displayLabel = new Label();
             pictureBox1 = new PictureBox();
             groupBox1 = new GroupBox();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox4 = new CheckBox();
             checkBox5 = new CheckBox();
+            checkBox4 = new CheckBox();
+            checkBox3 = new CheckBox();
+            checkBox2 = new CheckBox();
+            checkBox1 = new CheckBox();
+            getRecipe = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -125,35 +126,15 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Diet Restriction";
             // 
-            // checkBox1
+            // checkBox5
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(6, 39);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(87, 29);
-            checkBox1.TabIndex = 0;
-            checkBox1.Text = "Vegan";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(6, 74);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(121, 29);
-            checkBox2.TabIndex = 1;
-            checkBox2.Text = "Vegetarian";
-            checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(6, 109);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(127, 29);
-            checkBox3.TabIndex = 2;
-            checkBox3.Text = "Gluten Free";
-            checkBox3.UseVisualStyleBackColor = true;
+            checkBox5.AutoSize = true;
+            checkBox5.Location = new Point(6, 179);
+            checkBox5.Name = "checkBox5";
+            checkBox5.Size = new Size(116, 29);
+            checkBox5.TabIndex = 4;
+            checkBox5.Text = "Ketogenic";
+            checkBox5.UseVisualStyleBackColor = true;
             // 
             // checkBox4
             // 
@@ -165,21 +146,52 @@
             checkBox4.Text = "Pescetarian";
             checkBox4.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // checkBox3
             // 
-            checkBox5.AutoSize = true;
-            checkBox5.Location = new Point(6, 179);
-            checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(116, 29);
-            checkBox5.TabIndex = 4;
-            checkBox5.Text = "Ketogenic";
-            checkBox5.UseVisualStyleBackColor = true;
+            checkBox3.AutoSize = true;
+            checkBox3.Location = new Point(6, 109);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(127, 29);
+            checkBox3.TabIndex = 2;
+            checkBox3.Text = "Gluten Free";
+            checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(6, 74);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(121, 29);
+            checkBox2.TabIndex = 1;
+            checkBox2.Text = "Vegetarian";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(6, 39);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(87, 29);
+            checkBox1.TabIndex = 0;
+            checkBox1.Text = "Vegan";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // getRecipe
+            // 
+            getRecipe.Location = new Point(1081, 320);
+            getRecipe.Name = "getRecipe";
+            getRecipe.Size = new Size(112, 34);
+            getRecipe.TabIndex = 8;
+            getRecipe.Text = "Get Recipe";
+            getRecipe.UseVisualStyleBackColor = true;
+            getRecipe.Click += getRecipe_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1326, 398);
+            Controls.Add(getRecipe);
             Controls.Add(groupBox1);
             Controls.Add(pictureBox1);
             Controls.Add(displayLabel);
@@ -213,5 +225,6 @@
         private CheckBox checkBox3;
         private CheckBox checkBox2;
         private CheckBox checkBox1;
+        private Button getRecipe;
     }
 }

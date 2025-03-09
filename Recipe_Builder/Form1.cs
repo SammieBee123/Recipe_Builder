@@ -53,7 +53,7 @@ namespace Recipe_Builder
             string keyword = keywordTextBox.Text;
             if (keyword != null)
             {
-                IEnumerable<Recipe> recipes = await setQuery.Get5Recipies(keyword,restriction);
+                IEnumerable<Recipe> recipes = await setQuery.Get5Recipies(keyword, restriction);
                 returnedRecipes = recipes.ToList();
                 foreach (var recipe in returnedRecipes)
                 {
@@ -65,6 +65,7 @@ namespace Recipe_Builder
             {
                 MessageBox.Show("Invalid Keyword");
             }
+            MessageBox.Show(returnedRecipes.Count.ToString());
             //pictureBox1.Visible = false;
 
             /*if (recipesListBox.SelectedIndex >= 0)
@@ -165,8 +166,23 @@ namespace Recipe_Builder
             if (selectedIndex >= 0 && selectedIndex < returnedRecipes.Count)
             {
                 pictureBox1.Visible = true;
-                pictureBox1.Load(returnedRecipes[selectedIndex].Image);
+                try
+                {
+                    pictureBox1.Load(returnedRecipes[selectedIndex].Image);
+                }
+                catch
+                {
+                    pictureBox1.Visible = false;
+                }
             }
+        }
+
+        private void getRecipe_Click(object sender, EventArgs e)
+        {
+          /*  foreach (var step in returnedRecipes[selectedIndex].Step.Instructions)
+            {
+                MessageBox.Show(step.ToString());
+            }*/
         }
     }
 }

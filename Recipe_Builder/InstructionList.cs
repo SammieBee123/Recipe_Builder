@@ -11,7 +11,7 @@ namespace Recipe_Builder
     [Serializable]
     public class InstructionList
     {
-        [JsonProperty("results")]
+        [JsonProperty("analyzedInstructions")]
         public IEnumerable<Instruction> Instructions { get; set; }
     }
 }
