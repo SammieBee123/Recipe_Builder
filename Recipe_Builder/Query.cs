@@ -16,7 +16,7 @@ public class SpoonacularService : ISpoonacularService
         List<Recipe> recipes = new List<Recipe>();
 
         var url = $"https://api.spoonacular.com/recipes/complexSearch";
-        var parameters = $"?query={query}&addRecipeInstructions=true&apiKey={Consts.SPOONACULAR_API_KEY}&number=5";
+        var parameters = $"?query={query}&addRecipeInstructions=true&apiKey={Consts.SPOONACULAR_API_KEY}&number=10";
 
         HttpClient client = new HttpClient();
         client.BaseAddress = new Uri(url);
