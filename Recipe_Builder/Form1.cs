@@ -157,10 +157,6 @@ namespace Recipe_Builder
             this.Close();
         }
 
-        private void image_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void recipesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
