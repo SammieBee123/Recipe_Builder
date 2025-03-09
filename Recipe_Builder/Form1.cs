@@ -179,15 +179,24 @@ namespace Recipe_Builder
 
         private void getRecipe_Click(object sender, EventArgs e)
         {
+            // tabPage2
+            label4.Text = returnedRecipes[selectedIndex].Title;
+            label3.Text = "";
             //MessageBox.Show(returnedRecipes[selectedIndex ].AnalyzedInstructions);
             foreach (var Steps in returnedRecipes[selectedIndex].AnalyzedInstructions.Select(x => x.Steps))
             {
                 foreach (var Step in Steps.Select(x => x.Step))
                 {
-                    MessageBox.Show(Step.ToString());
+                    label3.Text+=Step.ToString();
+                    label3.Text += " ";
                 }
-                
+
             }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
