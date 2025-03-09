@@ -6,13 +6,10 @@ namespace Recipe_Builder
     [Serializable]
     public class Instruction
     {
-        [JsonProperty("steps[number]")]
+        [JsonProperty("analyzedInstructions[steps[number]]")]
         public int Number { get; set; }
 
-        [JsonProperty("steps[step]")]
-        public string step { get; set; }
-
-        [JsonProperty("steps[ingredient[id]]")]
-        public string id { get; set; }
+        [JsonProperty("analyzedInstructions[steps[step]]")]
+        public InstructionList step { get; set; }
     }
 }

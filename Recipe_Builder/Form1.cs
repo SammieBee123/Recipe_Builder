@@ -53,7 +53,7 @@ namespace Recipe_Builder
             string keyword = keywordTextBox.Text;
             if (keyword != null)
             {
-                IEnumerable<Recipe> recipes = await setQuery.Get5Recipies(keyword);
+                IEnumerable<Recipe> recipes = await setQuery.Get5Recipies(keyword,restriction);
                 returnedRecipes = recipes.ToList();
                 foreach (var recipe in returnedRecipes)
                 {

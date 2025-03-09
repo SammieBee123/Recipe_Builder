@@ -8,6 +8,6 @@ namespace Recipe_Builder
 { 
     interface ISpoonacularService
     {
-        Task<IEnumerable<Recipe>> Get5Recipies(String query);
+        Task<IEnumerable<Recipe>> Get5Recipies(String query, String dietList);
     }
 }

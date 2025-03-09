@@ -11,12 +11,12 @@ using System.Collections;
 
 public class SpoonacularService : ISpoonacularService
 {
-    public async Task<IEnumerable<Recipe>> Get5Recipies(String query)
+    public async Task<IEnumerable<Recipe>> Get5Recipies(String query, String dietList)
     {
         List<Recipe> recipes = new List<Recipe>();
 
         var url = $"https://api.spoonacular.com/recipes/complexSearch";
-        var parameters = $"?query={query}&addRecipeInstructions=true&apiKey={Consts.SPOONACULAR_API_KEY}&number=10";
+        var parameters = $"?query={query}&addRecipeInstructions=true&apiKey={Consts.SPOONACULAR_API_KEY}&number=10&diet={dietList}&addRecipeInformation=true";
 
         HttpClient client = new HttpClient();
         client.BaseAddress = new Uri(url);
