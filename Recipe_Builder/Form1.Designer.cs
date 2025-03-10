@@ -72,9 +72,9 @@
             tabPage1.Controls.Add(exitButton);
             tabPage1.Controls.Add(label1);
             tabPage1.Location = new Point(4, 24);
-            tabPage1.Margin = new Padding(2, 2, 2, 2);
+            tabPage1.Margin = new Padding(2);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(2, 2, 2, 2);
+            tabPage1.Padding = new Padding(2);
             tabPage1.Size = new Size(901, 314);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Search";
@@ -85,7 +85,7 @@
             // 
             pictureBox2.Image = Properties.Resources.vecteezy_question_mark_icon_51454748;
             pictureBox2.Location = new Point(846, 0);
-            pictureBox2.Margin = new Padding(2, 2, 2, 2);
+            pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(39, 31);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -110,7 +110,7 @@
             recipesListBox.HorizontalScrollbar = true;
             recipesListBox.ItemHeight = 15;
             recipesListBox.Location = new Point(245, 119);
-            recipesListBox.Margin = new Padding(2, 2, 2, 2);
+            recipesListBox.Margin = new Padding(2);
             recipesListBox.Name = "recipesListBox";
             recipesListBox.Size = new Size(371, 124);
             recipesListBox.TabIndex = 4;
@@ -119,7 +119,7 @@
             // getRecipe
             // 
             getRecipe.Location = new Point(308, 261);
-            getRecipe.Margin = new Padding(2, 2, 2, 2);
+            getRecipe.Margin = new Padding(2);
             getRecipe.Name = "getRecipe";
             getRecipe.Size = new Size(93, 32);
             getRecipe.TabIndex = 8;
@@ -130,7 +130,7 @@
             // keywordTextBox
             // 
             keywordTextBox.Location = new Point(315, 88);
-            keywordTextBox.Margin = new Padding(1, 1, 1, 1);
+            keywordTextBox.Margin = new Padding(1);
             keywordTextBox.Name = "keywordTextBox";
             keywordTextBox.Size = new Size(220, 23);
             keywordTextBox.TabIndex = 0;
@@ -143,9 +143,9 @@
             groupBox1.Controls.Add(checkBox2);
             groupBox1.Controls.Add(checkBox1);
             groupBox1.Location = new Point(57, 89);
-            groupBox1.Margin = new Padding(2, 2, 2, 2);
+            groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(2, 2, 2, 2);
+            groupBox1.Padding = new Padding(2);
             groupBox1.Size = new Size(131, 130);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
@@ -155,7 +155,7 @@
             // 
             checkBox5.AutoSize = true;
             checkBox5.Location = new Point(4, 107);
-            checkBox5.Margin = new Padding(2, 2, 2, 2);
+            checkBox5.Margin = new Padding(2);
             checkBox5.Name = "checkBox5";
             checkBox5.Size = new Size(79, 19);
             checkBox5.TabIndex = 4;
@@ -166,7 +166,7 @@
             // 
             checkBox4.AutoSize = true;
             checkBox4.Location = new Point(4, 86);
-            checkBox4.Margin = new Padding(2, 2, 2, 2);
+            checkBox4.Margin = new Padding(2);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(86, 19);
             checkBox4.TabIndex = 3;
@@ -177,7 +177,7 @@
             // 
             checkBox3.AutoSize = true;
             checkBox3.Location = new Point(4, 65);
-            checkBox3.Margin = new Padding(2, 2, 2, 2);
+            checkBox3.Margin = new Padding(2);
             checkBox3.Name = "checkBox3";
             checkBox3.Size = new Size(86, 19);
             checkBox3.TabIndex = 2;
@@ -188,7 +188,7 @@
             // 
             checkBox2.AutoSize = true;
             checkBox2.Location = new Point(4, 44);
-            checkBox2.Margin = new Padding(2, 2, 2, 2);
+            checkBox2.Margin = new Padding(2);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(81, 19);
             checkBox2.TabIndex = 1;
@@ -199,7 +199,7 @@
             // 
             checkBox1.AutoSize = true;
             checkBox1.Location = new Point(4, 23);
-            checkBox1.Margin = new Padding(2, 2, 2, 2);
+            checkBox1.Margin = new Padding(2);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(58, 19);
             checkBox1.TabIndex = 0;
@@ -209,7 +209,7 @@
             // getButton
             // 
             getButton.Location = new Point(540, 90);
-            getButton.Margin = new Padding(1, 1, 1, 1);
+            getButton.Margin = new Padding(1);
             getButton.Name = "getButton";
             getButton.Size = new Size(78, 20);
             getButton.TabIndex = 1;
@@ -221,7 +221,7 @@
             // 
             pictureBox1.Image = Properties.Resources.Logo;
             pictureBox1.Location = new Point(670, 101);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(181, 140);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -231,7 +231,7 @@
             // exitButton
             // 
             exitButton.Location = new Point(445, 261);
-            exitButton.Margin = new Padding(1, 1, 1, 1);
+            exitButton.Margin = new Padding(1);
             exitButton.Name = "exitButton";
             exitButton.Size = new Size(108, 32);
             exitButton.TabIndex = 2;
@@ -254,7 +254,7 @@
             Search.Controls.Add(tabPage1);
             Search.Controls.Add(tabPage2);
             Search.Location = new Point(0, 1);
-            Search.Margin = new Padding(2, 2, 2, 2);
+            Search.Margin = new Padding(2);
             Search.Name = "Search";
             Search.SelectedIndex = 0;
             Search.Size = new Size(909, 342);
@@ -268,9 +268,9 @@
             tabPage2.Controls.Add(label5);
             tabPage2.Controls.Add(label4);
             tabPage2.Location = new Point(4, 24);
-            tabPage2.Margin = new Padding(2, 2, 2, 2);
+            tabPage2.Margin = new Padding(2);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(2, 2, 2, 2);
+            tabPage2.Padding = new Padding(2);
             tabPage2.Size = new Size(901, 314);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Recipe";
@@ -279,9 +279,11 @@
             // 
             // richTextBox2
             // 
+            richTextBox2.BackColor = Color.White;
             richTextBox2.Location = new Point(32, 91);
-            richTextBox2.Margin = new Padding(2, 2, 2, 2);
+            richTextBox2.Margin = new Padding(2);
             richTextBox2.Name = "richTextBox2";
+            richTextBox2.ReadOnly = true;
             richTextBox2.ScrollBars = RichTextBoxScrollBars.Vertical;
             richTextBox2.Size = new Size(201, 215);
             richTextBox2.TabIndex = 6;
@@ -291,7 +293,7 @@
             // 
             richTextBox1.BackColor = SystemColors.ControlLightLight;
             richTextBox1.Location = new Point(263, 91);
-            richTextBox1.Margin = new Padding(2, 2, 2, 2);
+            richTextBox1.Margin = new Padding(2);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ReadOnly = true;
             richTextBox1.ScrollBars = RichTextBoxScrollBars.Vertical;
@@ -337,7 +339,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(909, 342);
             Controls.Add(Search);
-            Margin = new Padding(1, 1, 1, 1);
+            Margin = new Padding(1);
             Name = "Form1";
             Text = "Recipe Builder";
             tabPage1.ResumeLayout(false);

@@ -185,6 +185,8 @@ namespace Recipe_Builder
 
                 label4.Text = returnedRecipes[selectedIndex].Title;
                 richTextBox1.Text = "";
+                richTextBox2.Text = "";
+                int stepNumber = 1;
                 //MessageBox.Show(returnedRecipes[selectedIndex ].AnalyzedInstructions);
                 IEnumerable<ExtendedIngredients> ExtendedIngredients = await setQuery.GetRecipeDetails(returnedRecipes[selectedIndex]);
                 foreach (var Original in ExtendedIngredients.Select(x => x.Original))
@@ -197,9 +199,12 @@ namespace Recipe_Builder
                 {
                     foreach (var Step in Steps.Select(x => x.Step))
                     {
+                        richTextBox1.Text += stepNumber.ToString() + ". ";
                         //MessageBox.Show(Step.ToString());
                         richTextBox1.Text += Step.ToString();
-                        richTextBox1.Text += "\n";
+                        richTextBox1.Text += "\n \n";
+                        stepNumber++;
+
                     }
 
                 }
