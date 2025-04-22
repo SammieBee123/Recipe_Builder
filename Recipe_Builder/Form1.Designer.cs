@@ -1,4 +1,5 @@
-﻿namespace Recipe_Builder
+﻿//
+namespace Recipe_Builder
 {
     partial class Form1
     {
